@@ -1,0 +1,137 @@
+/* Pantalla negra al 100% */
+.black-screen {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Contenedor del mensaje y corazones */
+.message-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilos del mensaje */
+.message {
+  font-size: 3rem;
+  font-family: 'Arial', sans-serif;
+  color: #ff6b81;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Estilo de los corazones */
+.hearts-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  width: 40px;  /* Tamaño fijo */
+  height: 40px;
+  background-color: #ff6b81;
+  transform: rotate(-45deg);
+  animation: float 6s ease-in infinite;
+  opacity: 0.8;
+}
+
+/* Ajuste para la forma del corazón */
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: inherit;
+}
+
+.heart::before {
+  top: -20px;
+  left: 0;
+}
+
+.heart::after {
+  left: 20px;
+  top: 0;
+}
+
+/* Diferentes colores de corazones */
+.heart.heart-red {
+  background-color: #ff4e50;
+}
+
+.heart.heart-pink {
+  background-color: #ff6b81;
+}
+
+.heart.heart-purple {
+  background-color: #9b59b6;
+}
+
+.heart.heart-yellow {
+  background-color: #f1c40f;
+}
+
+.heart.heart-blue {
+  background-color: #3498db;
+}
+
+/* Animación de los corazones flotando */
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0.5) rotate(-45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+/* Posicionamiento aleatorio de los corazones */
+.heart:nth-child(1) {
+  left: 10%;
+  animation-duration: 6s;
+}
+
+.heart:nth-child(2) {
+  left: 30%;
+  animation-duration: 7s;
+}
+
+.heart:nth-child(3) {
+  left: 50%;
+  animation-duration: 5s;
+}
+
+.heart:nth-child(4) {
+  left: 70%;
+  animation-duration: 4s;
+}
+
+.heart:nth-child(5) {
+  left: 90%;
+  animation-duration: 8s;
+}

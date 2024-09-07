@@ -1,0 +1,10 @@
+<div class="black-screen" (click)="actualizarFrase()" *ngIf="!showMessage">
+</div>
+
+<div class="message-container" *ngIf="showMessage" (click)="actualizarFrase()">
+  <h1 class="message">{{ fraseActual }} </h1>
+  <div class="hearts-container">
+    <!-- Aplicar el color de cada corazón de acuerdo con el array generado -->
+    <div class="heart" *ngFor="let heart of hearts" [ngClass]="heart.color"></div>
+  </div>
+</div>
